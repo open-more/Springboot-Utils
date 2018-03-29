@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>DTOCreater</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+<link th:href="@{/css/bootstrap-theme.min.css}" rel="stylesheet"/>
+<script th:src="@{/js/jquery-3.2.1.min.js}" type="text/javascript"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<meta charset="UTF-8"/>
+</head>
+<body style="height: 1000px;flex:1;">
+<!-- 遮罩层DIV -->
+<div style="width: 100%; background: #dfdfdf; background-color: #dfdfdf; height:1000px;display: flex;">
+    <div style="text-align: center;padding-top: 20px; width:40%;">
+        <div style="text-align: center;padding-top: 20px;">
+            <font size="6" style="text-align: center">DTO Creator V1.0</font>
+            </div>
+        <div style="text-align: center;padding-top: 20px">
+            <form id="createrForm" method="post">
+                <div style="display:inline">
+                <input type="button" value="Show DTO" onclick="showCode(1)"/>
+                <input type="button" value="Show Service" onclick="showCode(2)"/>
+                <input type="button" value="Show ServiceImpl" onclick="showCode(3)"/>
+                <input type="button" value="Show Controller" onclick="showCode(4)"/>
+                <input type="button" value="Create All Source" onclick="createAction()"/>
+                </div>
+                <table align="center" style="margin-top: 30px">
+                    <tr>
+                        <th><u>PackageName</u>：</th>
+                        <th><input type="text" id="packageName" placeholder="如：com.openmore"/></th>
+                    </tr>
+                    <tr>
+                        <th><u>DTO</u>：</th>
+                        <th><input type="text" id="className" placeholder="如：User"/></th>
+                    </tr>
+                    <tr>
+                        <th><u>DTO中文名</u>：</th>
+                        <th><input type="text" id="className_zn" placeholder="如：用户"/></th>
+                    </tr>
+                    <tr>
+                        <th><u>Controller说明</u>：</th>
+                        <th><input type="text" id="controller_desc" placeholder="如：用户控制器"/></th>
+                    </tr>
+                </table>
+
+                <div align="center" style="margin-top: 30px"><font size="4" >DTO属性：</font></div>
+
+                <table align="center" style="margin-top: 30px" id="attrs">
+                </table>
+            </form>
+                <button  id="addButton" data-number="0" onclick="addProperties()" style="border: none; background-image: url('http://pic2.16pic.com/00/21/82/16pic_2182030_b.jpg'); width:35px;height:35px; background-size: 100%; margin-top: 15px"/>
+            </div>
+    </div>
+
+    <div  style="background-color: #ffffff; width:60%; flex-grow=2;" >
+        <textarea id="overlay" style="padding: 8px; color: #FFFFFF; border:solid; background-color:#000000; border-color: #000000; width: 100%; height: 90%" disabled="disabled"> Source Code</textarea>
+    </div>
+</div>
+<script th:src="@{/js/DtoCreator.js}" type="text/javascript"></script>
+</body>
+</html>
