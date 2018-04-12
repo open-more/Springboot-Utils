@@ -36,7 +36,7 @@ public class DtoCreatorController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/home")
     public String pageToDtoCreater() {
-        return "DtoCreator";
+        return "index";
     }
 
 

@@ -7,7 +7,7 @@ public class FreeMakerConfig {
     /**
      * 默认模板所在根目录
      */
-    public static String TEMPLATE_ROOT_DIRECTORY = "src/main/resources/template";
+    public static String TEMPLATE_ROOT_DIRECTORY = "src/main/resources/freemakerTemplate";
     /**
      * 默认默认编码
      */
