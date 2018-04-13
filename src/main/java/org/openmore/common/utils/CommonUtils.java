@@ -13,6 +13,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
+import java.util.UUID;
 
 /**
  * Created by michaeltang on 2018/3/22.
@@ -215,6 +216,14 @@ public class CommonUtils {
             logger.debug(e.getMessage());
             throw new InvalidTokenException("无效token");
         }
+    }
+
+    /**
+     * 自动生成32位的UUid，去掉减号，对应数据库的主键id进行插入用。
+     * @return
+     */
+    public static String getUUID() {
+        return UUID.randomUUID().toString().replace("-", "");
     }
 
 }
